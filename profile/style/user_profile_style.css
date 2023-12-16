@@ -8,7 +8,7 @@ body{
     width: 220px;
     font-size: 20px;
     border: 1px solid black;
-    background-color:#a7bcfb;
+    background-color:#ffffff;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .custom-button:hover{
@@ -29,6 +29,6 @@ body{
     background-color: #FA665F !important;
 }
 .custom-button-admin {
-    background-color: #DB7093;
+    background-color: #ff0000;
 }
   
