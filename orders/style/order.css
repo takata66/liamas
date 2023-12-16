@@ -1,0 +1,88 @@
+/* orders.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #87a5ff !important;
+}
+
+.order-card {
+    background-color: white;
+    border-radius: 30px; 
+    color: #333;
+    margin-bottom: 30px;
+    height: 500px; /* Fixed height for order card */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-title, .card-date, .card-status {
+    font-weight: bold;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.order-card .card-body .product-list {
+    flex-grow: 1;
+    overflow-y: auto; /* Scrollbar for overflowing product list */
+    ::-webkit-scrollbar {
+        width: 8px !important;/* Scrollbar width */
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1 !important; /* Track color */
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888 !important; /* Handle color */
+        border-radius: 4px !important; /* Rounded corners for the scrollbar handle */
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555 !important; /* Handle color on hover */
+    }
+}
+
+.product-image {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.product-info {
+    flex-grow: 1;
+    width: 300px;
+}
+
+.product-name, .product-price {
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 0.875rem;
+}
+
+.product-price {
+    font-size: 1rem;
+    color: #333;
+    margin-left: auto;
+}
+
+.total-price {
+    font-size: 1rem;
+    text-align: right;
+    font-weight: bold;
+    color: #19F7A4; 
+    margin-top: 10px; /* Margin to position at bottom right */
+}

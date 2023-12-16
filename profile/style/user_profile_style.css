@@ -1,0 +1,34 @@
+body{
+    background-color:#fefefe!important;
+}
+.custom-button{
+    justify-items: center;
+    justify-content:center;
+    height: 50px;
+    width: 220px;
+    font-size: 20px;
+    border: 1px solid black;
+    background-color:#a7bcfb;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.custom-button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    
+}
+.form-buttons{
+    border: 1px solid #000000;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.form-buttons:hover{
+    background-color:#a7bcfb;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.custom-button-exit:hover{
+    background-color: #FA665F !important;
+}
+.custom-button-admin {
+    background-color: #DB7093;
+}
+  

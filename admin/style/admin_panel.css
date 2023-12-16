@@ -1,0 +1,105 @@
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    height: 100%; /* Фиксированная высота */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    overflow: auto; 
+    max-height: 3.6rem; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+
+.card .btn {
+    width: 100%;
+}
+
+#products-container {
+    margin-top: 20px;
+}
+
+.row.mb-4 {
+    margin-bottom: 30px !important;
+}
+
+#category-filter {
+    max-width: 300px;
+    margin: auto;
+}
+
+#categories-container .btn,
+.btn-category {
+    text-align: left;
+    margin-bottom: 10px;
+    background-color: white;
+    border: none;
+    color: black;
+    width: 100%;
+    border-radius: 0;
+}
+
+#categories-container .btn:hover,
+.btn-category.active {
+    background-color: #F3F4F7;
+    color: #007bff;
+}
+
+.btn-category:focus {
+    box-shadow: none;
+}
+
+/* Стиль для всех полос прокрутки в элементах с классом .card-text */
+.card-text::-webkit-scrollbar {
+    width: 5px; /* ширина полосы прокрутки */
+}
+
+.card-text::-webkit-scrollbar-track {
+    background: #f1f1f1; /* цвет дорожки полосы прокрутки */
+}
+
+.card-text::-webkit-scrollbar-thumb {
+    background: #888; /* цвет ползунка полосы прокрутки */
+}
+
+.card-text::-webkit-scrollbar-thumb:hover {
+    background: #555; /* цвет ползунка полосы прокрутки при наведении */
+}
+
+/* Для Firefox */
+.card-text {
+    scrollbar-width: thin; /* 'thin' для тонкой полосы прокрутки */
+    scrollbar-color: #888 #f1f1f1; /* ползунок и дорожка */
+}

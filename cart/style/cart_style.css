@@ -1,0 +1,165 @@
+body{
+    margin-bottom: 60px;
+}
+
+
+
+.cart-item {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.product-image {
+    width: 150px; 
+    height: 150px; 
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+   
+}
+
+.product-image img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.product-quantity {
+    flex: 0 0 120px; 
+    display: flex;
+    align-items: center;
+}
+
+.product-price {
+    flex: 0 0 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#checkout {
+    float: right;
+    margin-top: 20px;
+}
+
+.remove-from-cart {
+    margin-top: 50px;
+    font-size:12px;
+    height:26px;
+    width: 60px; 
+    padding: 5px;
+}
+.increase-quantity, .decrease-quantity{
+    margin:0;
+    width:30px;
+    height: 30px;
+    padding-top:0%;
+}
+.modal-content {
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+#confirm-order {
+    background-color: green;
+    border-color: darkgreen;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10px;
+    }
+}
+#checkout {
+    border-radius: 20px; 
+}
+
+.card {
+    border: none; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+
+.btn-success {
+    background-color: #28a745; 
+}
+
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.card-subtitle {
+    font-size: 0.875rem;
+}
+
+.card-text p {
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.card-text .font-weight-bold {
+    font-size: 1.5rem;
+}
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+    padding: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.order-item img {
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+.total-price {
+    font-weight: bold;
+    margin-top: 20px; 
+    text-align: right;
+    color: #19F7C8;
+}
+
+@media (max-width: 600px) {
+    .modal-dialog {
+        width: 100%;
+        margin: 0;
+    }
+}
+.btn-agree{
+    background-color: #a7bcfb;
+}
+.btn-agree:hover{
+    background-color: #87a5ff;
+}
+.total-price-text{
+    color: #1951F7 !important;
+}
