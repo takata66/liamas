@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Jewelry Store Admin API
+  title: Jewelry Store API
   version: 1.0.0
 
 paths:
