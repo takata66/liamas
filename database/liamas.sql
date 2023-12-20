@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 10 2023 г., 22:44
+-- Время создания: Дек 20 2023 г., 01:37
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -40,10 +40,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `quantity`, `added_on`) VALUES
-(47, 1, 3, 1, '2023-12-10 18:07:06'),
-(48, 1, 20, 1, '2023-12-10 18:07:07'),
-(49, 1, 5, 1, '2023-12-10 18:07:08'),
-(50, 1, 6, 1, '2023-12-10 18:07:09');
+(101, 1, 5, 1, '2023-12-16 05:57:09'),
+(104, 1, 12, 1, '2023-12-16 05:57:16'),
+(105, 1, 13, 1, '2023-12-16 05:57:17');
 
 -- --------------------------------------------------------
 
@@ -91,11 +90,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `order_date`, `status`, `payment_type`, `product_id`, `price`, `address`, `full_name`) VALUES
-(953, 1, '2023-12-08 19:55:51', 'доставлен', 'card', '[{\"product_id\":13,\"quantity\":1},{\"product_id\":12,\"quantity\":1},{\"product_id\":15,\"quantity\":1},{\"product_id\":6,\"quantity\":1},{\"product_id\":2,\"quantity\":1},{\"product_id\":3,\"quantity\":2}]', 26600.00, 'Москва, Краснопресненская набережная, 2, Частное здание', 'Шачнев Дмитрий Константинович'),
-(954, 1, '2023-12-08 19:57:10', 'отправлен', 'sbp', '[{\"product_id\":13,\"quantity\":1},{\"product_id\":12,\"quantity\":1},{\"product_id\":15,\"quantity\":1},{\"product_id\":6,\"quantity\":1},{\"product_id\":2,\"quantity\":1},{\"product_id\":3,\"quantity\":2}]', 26600.00, 'Москва, Краснопресненская набережная, 2, Частное здание', 'Шачнев Дмитрий Константинович'),
-(967, 1, '2023-12-10 16:43:44', 'обработан', 'sbp', '[{\"product_id\":3,\"quantity\":1},{\"product_id\":2,\"quantity\":1},{\"product_id\":5,\"quantity\":1}]', 14000.00, 'Москва, Центральный административный округ, Тверской район, Кремль, 1, Частное здание', 'Шачнев Дмитрий Константинович'),
-(968, 1, '2023-12-10 18:00:57', 'обработан', 'sbp', '[{\"product_id\":2,\"quantity\":2},{\"product_id\":3,\"quantity\":2},{\"product_id\":5,\"quantity\":3}]', 30500.00, 'Свердловская область, Заречный, Таховская улица, 6, 44', 'Шачнев Максим Константинович'),
-(969, 3, '2023-12-10 18:10:46', 'доставлен', 'cash', '[{\"product_id\":3,\"quantity\":1},{\"product_id\":5,\"quantity\":1},{\"product_id\":6,\"quantity\":1},{\"product_id\":11,\"quantity\":1},{\"product_id\":10,\"quantity\":1},{\"product_id\":13,\"quantity\":1},{\"product_id\":15,\"quantity\":1},{\"product_id\":20,\"quantity\":1}]', 23703.00, 'Москва, Центральный административный округ, Тверской район, Кремль, 1, Частное здание', 'Шачнев Дмитрий Константинович');
+(974, 1, '2023-12-15 22:22:38', 'обработан', 'sbp', '[{\"product_id\":3,\"quantity\":1},{\"product_id\":5,\"quantity\":1},{\"product_id\":6,\"quantity\":1},{\"product_id\":9,\"quantity\":1}]', 15900.00, 'Москва, Хилков переулок, 1, Частное здание', 'Шачнев Дмитрий Константинович'),
+(975, 1, '2023-12-16 02:06:39', 'обработан', 'card', '[{\"product_id\":5,\"quantity\":1},{\"product_id\":6,\"quantity\":1},{\"product_id\":9,\"quantity\":1}]', 7900.00, 'Мещерский парк, Частное здание', 'Шачнев Дмитрий Константинович'),
+(976, 1, '2023-12-16 05:11:13', 'обработан', 'cash', '[{\"product_id\":6,\"quantity\":2},{\"product_id\":3,\"quantity\":1},{\"product_id\":5,\"quantity\":2},{\"product_id\":12,\"quantity\":1},{\"product_id\":15,\"quantity\":1},{\"product_id\":10,\"quantity\":1}]', 22500.00, 'Москва, Лужники, Частное здание', 'Шачнев Дмитрий Константинович'),
+(977, 1, '2023-12-16 05:11:35', 'обработан', 'sbp', '[{\"product_id\":5,\"quantity\":1},{\"product_id\":3,\"quantity\":1},{\"product_id\":9,\"quantity\":1}]', 14700.00, 'Москва, Беленовский проезд, Частное здание', 'Шачнев Дмитрий Константинович');
 
 -- --------------------------------------------------------
 
@@ -125,8 +123,7 @@ INSERT INTO `products` (`product_id`, `name`, `description`, `price`, `category_
 (11, 'Бриллиантовое кольцо', 'Кольцо с крупным бриллиантом в круглой огранке.', 7500.00, 1, 'https://sun9-61.userapi.com/impg/oiYRmmN5cEyXK7T8W49c-vJfiJcx8-k7rgeFNQ/qR4mdRHtheE.jpg?size=640x480&quality=96&sign=a16869924b6eb390b20c0e04940d92d2&type=album'),
 (12, 'Сапфировый браслет', 'Сапфировый браслет с белыми бриллиантами.', 3800.00, 4, 'https://sun9-6.userapi.com/impg/5OCta6zywRD7ZCOzRibOQHdvWWrMfiV2RG3XUg/l-8dIkb6ZIE.jpg?size=1024x1024&quality=96&sign=e619f38e1d1a1ff271467792225f07ec&type=album'),
 (13, 'Серьги-гвоздики', 'Простые и стильные серьги-гвоздики из золота.', 1200.00, 2, 'https://sun9-61.userapi.com/impg/oiYRmmN5cEyXK7T8W49c-vJfiJcx8-k7rgeFNQ/qR4mdRHtheE.jpg?size=640x480&quality=96&sign=a16869924b6eb390b20c0e04940d92d2&type=album'),
-(15, 'Подвеска с аметистом', 'Подвеска с аметистовым камнем и серебряной цепью.', 900.00, 3, 'https://sun9-15.userapi.com/impg/kGI1h-CsRFmsObJhMaFIjztQIaeRyGhEQW6q8w/Ug7WyiX3DIk.jpg?size=1024x1024&quality=96&sign=509b501dceb03cfb09b43045b3411e9a&type=album'),
-(20, 'Максим крутой', 'Красивый максим по цене 3 рубля', 3.00, 1, 'https://sun9-78.userapi.com/impg/uXTN7dasIajYvGArb7nZ1D8Mb_GpLXMNjQd36g/8xh6wNK7EbI.jpg?size=912x1050&quality=96&sign=ad44ba8de0d48326ff6904627bb55d13&type=album');
+(15, 'Подвеска с аметистом', 'Подвеска с аметистовым камнем и серебряной цепью.', 900.00, 3, 'https://sun9-15.userapi.com/impg/kGI1h-CsRFmsObJhMaFIjztQIaeRyGhEQW6q8w/Ug7WyiX3DIk.jpg?size=1024x1024&quality=96&sign=509b501dceb03cfb09b43045b3411e9a&type=album');
 
 -- --------------------------------------------------------
 
@@ -139,17 +136,21 @@ CREATE TABLE `users` (
   `username` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `role` enum('admin','customer') DEFAULT NULL
+  `role` enum('admin','customer') DEFAULT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `middle_name` varchar(255) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`) VALUES
-(1, 'takata', 'mity.klondike@gmail.com', '$2y$10$mj00HnsiZfmgam0wRMXXr.gJy.Rih1Ab9KtLhq7OW9wDiD6SiMt.C', 'admin'),
-(2, 'vikamikky', 'mikushina04@inbox.ru', '$2y$10$lxZ4JnzDEiCwQIBBCTcrP.IvNbbTRJoNszJTfKeGp7aLFdRBNaAdi', 'customer'),
-(3, 'takata9', 'juve.hef@gmail.com', '$2y$10$Y2qTdUziruOv1LBRS4oqM.mBTvCQW14qxT/0qNL7b/qMvdRb1MFn2', 'customer');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`, `surname`, `first_name`, `middle_name`, `date_of_birth`) VALUES
+(1, 'takata', 'mity.klondike@gmail.com', '$2y$10$KfRu.Nvtunu.04nMn0MuSO.3m2x7aQCeioqXV1ABBs0bEyJULCTvS', 'admin', NULL, NULL, NULL, NULL),
+(2, 'vikamikky', 'mikushina04@inbox.ru', '$2y$10$lxZ4JnzDEiCwQIBBCTcrP.IvNbbTRJoNszJTfKeGp7aLFdRBNaAdi', 'admin', 'Микушина', 'Виктория', 'Дмитриевна', '2004-11-10'),
+(3, 'takata9', 'juve.hef@gmail.com', '$2y$10$Y2qTdUziruOv1LBRS4oqM.mBTvCQW14qxT/0qNL7b/qMvdRb1MFn2', 'customer', 'Шачнев', 'Дмитрий1', 'Константинович', '2004-04-16');
 
 --
 -- Индексы сохранённых таблиц
@@ -197,7 +198,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT для таблицы `categories`
@@ -209,7 +210,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=970;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=978;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
@@ -221,7 +222,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
