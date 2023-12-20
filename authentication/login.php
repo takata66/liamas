@@ -4,6 +4,11 @@ if (isset($_SESSION['error'])) {
     $error = $_SESSION['error'];
     unset($_SESSION['error']);
 }
+if (isset($_SESSION['user_id'])) {
+    // Пользователь уже вошел в систему, перенаправляем его
+    header('Location: /liamas/profile/user_profile.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
