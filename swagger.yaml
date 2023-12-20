@@ -1,0 +1,314 @@
+openapi: 3.0.0
+info:
+  title: Jewelry Store Admin API
+  version: 1.0.0
+
+paths:
+  /logic/admin_panel_logic.php:
+    post:
+      summary: Загрузка или удаление продуктов в админ-панели
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [loadAdminProducts, deleteProduct]
+                product_id:
+                  type: integer
+                  description: ID продукта для удаления
+      responses:
+        '200':
+          description: Успешное выполнение
+        '400':
+          description: Ошибка запроса
+
+  /logic/get_categories_logic.php:
+    get:
+      summary: Получение списка категорий
+      responses:
+        '200':
+          description: Успешное получение списка категорий
+        '400':
+          description: Ошибка запроса
+
+  /admin/logic/add_product_logic.php:
+    post:
+      summary: Добавление нового продукта
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: number
+                category_id:
+                  type: integer
+                image_url:
+                  type: string
+      responses:
+        '200':
+          description: Продукт успешно добавлен
+        '400':
+          description: Ошибка запроса
+
+  /authentication/logic/login_logic.php:
+    post:
+      summary: Авторизация пользователя
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '302':
+          description: Перенаправление на главную страницу после успешной авторизации
+        '401':
+          description: Ошибка аутентификации (неверный пароль или пользователь не найден)
+
+  /authentication/logic/register_logic.php:
+    post:
+      summary: Регистрация нового пользователя
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                confirm_password:
+                  type: string
+      responses:
+        '302':
+          description: Перенаправление на страницу входа после успешной регистрации
+        '400':
+          description: Ошибка регистрации (например, несовпадение паролей или уже существующий пользователь)
+
+  /cart/logic/cart_items_logic.php:
+    post:
+      summary: Получение элементов в корзине пользователя
+      responses:
+        '200':
+          description: Успешное получение элементов корзины
+        '401':
+          description: Пользователь не авторизован
+
+  /cart/logic/cart_logic.php:
+    post:
+      summary: Добавление товара в корзину
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [addToCart]
+                product_id:
+                  type: integer
+      responses:
+        '200':
+          description: Товар успешно добавлен в корзину
+        '401':
+          description: Пользователь не авторизован или неверный запрос
+
+  /cart/logic/clear_cart.php:
+    post:
+      summary: Очистка корзины пользователя
+      responses:
+        '200':
+          description: Корзина успешно очищена
+        '401':
+          description: Пользователь не авторизован
+
+  /cart/logic/create_order.php:
+    post:
+      summary: Создание заказа из корзины
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                payment_method:
+                  type: string
+                total_price:
+                  type: number
+                full_name:
+                  type: string
+                address:
+                  type: string
+                apartment:
+                  type: string
+      responses:
+        '200':
+          description: Заказ успешно создан
+        '400':
+          description: Ошибка при создании заказа (например, пустые поля)
+
+  /cart/logic/decrease_quantity.php:
+    post:
+      summary: Уменьшение количества товара в корзине
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+      responses:
+        '200':
+          description: Количество товара успешно уменьшено
+        '400':
+          description: Ошибка при уменьшении количества товара
+
+  /cart/logic/increase_quantity.php:
+    post:
+      summary: Увеличение количества товара в корзине
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+      responses:
+        '200':
+          description: Количество товара успешно увеличено
+        '400':
+          description: Ошибка при увеличении количества товара
+
+  /cart/logic/remove_from_cart.php:
+    post:
+      summary: Удаление товара из корзины
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+      responses:
+        '200':
+          description: Товар успешно удалён из корзины
+        '400':
+          description: Ошибка при удалении товара из корзины
+
+ /catalog/logic/catalog_logic.php:
+    post:
+      summary: Загрузка продуктов и категорий
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [loadProducts, loadCategories]
+                categoryId:
+                  type: integer
+                  nullable: true
+                  description: Идентификатор категории для фильтрации продуктов
+      responses:
+        '200':
+          description: Успешная загрузка продуктов или категорий
+        '400':
+          description: Ошибка запроса
+
+  /orders/logic/load_order_items.php:
+    post:
+      summary: Загрузка информации о заказах пользователя
+      responses:
+        '200':
+          description: Успешная загрузка информации о заказах
+        '401':
+          description: Пользователь не авторизован
+        '500':
+          description: Ошибка при выполнении запроса к базе данных
+
+  /profile/logic/change_password_logic.php:
+    post:
+      summary: Изменение пароля пользователя
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                old_password:
+                  type: string
+                new_password:
+                  type: string
+                confirm_password:
+                  type: string
+      responses:
+        '302':
+          description: Перенаправление после попытки изменения пароля
+        '401':
+          description: Ошибка аутентификации пользователя
+
+  /profile/logic/check_user_data.php:
+    get:
+      summary: Проверка заполненности профиля пользователя
+      responses:
+        '200':
+          description: Возвращение состояния заполненности профиля
+        '401':
+          description: Пользователь не авторизован
+
+  /profile/logic/update_profile_logic.php:
+    post:
+      summary: Обновление профиля пользователя
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                surname:
+                  type: string
+                middle_name:
+                  type: string
+                date_of_birth:
+                  type: string
+      responses:
+        '302':
+          description: Перенаправление после обновления профиля
+        '401':
+          description: Ошибка аутентификации пользователя
