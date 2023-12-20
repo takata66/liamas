@@ -79,10 +79,8 @@
 ## Шаг 1: Клонирование репозитория
 
 1. Откройте консоль Bash и выполните следующие команды для клонирования репозитория:
-
-2. ```bash
-3. git clone https://github.com/takata66/liamas.git
-4. cd liamas
+2. git clone https://github.com/takata66/liamas.git
+3. cd liamas
 
 ## Шаг 2: Создание базы данных
 
