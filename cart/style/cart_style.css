@@ -145,7 +145,7 @@ body{
     font-weight: bold;
     margin-top: 20px; 
     text-align: right;
-    color: #19F7C8;
+    color: #1951F7 !important;
 }
 
 @media (max-width: 600px) {
@@ -159,7 +159,4 @@ body{
 }
 .btn-agree:hover{
     background-color: #87a5ff;
-}
-.total-price-text{
-    color: #1951F7 !important;
 }

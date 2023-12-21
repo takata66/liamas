@@ -82,8 +82,6 @@ $(document).ready(function() {
             var productName = $(this).find('.product-title').text();
             var productPrice = $(this).find('.product-price span').text();
             var productImage = $(this).find('.product-image img').attr('src');
-            
-
             summaryHtml += '<div class="order-item"><img src="' + productImage + '" alt="' + productName + '" style="width: 50px; height: 50px;"/> ' + productName + '  ' + productPrice + '</div>';
     });
 
