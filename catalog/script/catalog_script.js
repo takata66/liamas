@@ -58,13 +58,6 @@ $(document).ready(function() {
     
 });
 
-
-$(document).on('click', '.card', function() {
-    var productId = $(this).data('product-id');
-    window.location.href = 'product_details.php?product_id=' + productId;
-});
-
-
 $(document).on('click', '.add-to-cart', function() {
     var productId = $(this).data('product-id');
     $.ajax({
